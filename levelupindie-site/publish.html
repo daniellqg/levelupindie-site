@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>合作咨询</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+
+<body>
+  <header class="site-header">
+  <img src="logo.png" alt="Level Up Indie Logo" class="logo"/>
+
+  <!-- 汉堡按钮 -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <nav>
+    <ul class="nav-list" id="navList">
+      <li><a href="index.html#games">游戏作品</a></li>
+      <li><a href="publish.html">合作咨询</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="index.html#contact">联系我们</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <section class="page-section">
+    <h1>合作咨询</h1>
+    <p>我们欢迎开发者与我们合作，共同将优秀的独立游戏带向全球玩家。</p>
+
+    <h2>🎯 我们专注的游戏类型</h2>
+    <ul>
+      <li>像素风 / 手绘风</li>
+      <li>模拟经营、生活类</li>
+      <li>城市建造、轻解谜、角色扮演</li>
+    </ul>
+
+    <h2>🧰 我们提供的支持</h2>
+    <ul>
+      <li>全球发行支持（Steam / Stove / 主机平台）</li>
+      <li>中文本地化与中英双语宣传物料</li>
+      <li>参与节展活动（如 Steam Next Fest、Indie Live Expo）</li>
+      <li>媒体曝光、内容创作者合作、社区管理</li>
+    </ul>
+
+    <h2>📬 联系方式</h2>
+    <p>
+      请将游戏介绍、演示视频、试玩链接等发送至：<br/>
+      <a href="mailto:daniel@levelupindie.com">daniel@levelupindie.com</a>
+    </p>
+    <p>
+      我们会在 7 个工作日内与你联系。期待与你一起将好游戏带向世界！
+    </p>
+  </section>
+
+  <footer>
+    <p>📮 合作联系：daniel@levelupindie.com</p>
+    <p>© 2025 Levelup Games</p>
+  </footer>
+
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navList');
+    nav.classList.toggle('show');
+  }
+  </script>
+</body>
+</html>
