@@ -1,0 +1,203 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #fffef9;
+  color: #333;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #ffe66d;
+  border-bottom: 3px solid #ff7b7b;
+  flex-wrap: wrap; /* 添加这行，支持 LOGO 换行 */
+}
+
+.logo {
+  height: 60px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    height: 48px;
+  }
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #ffecd1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #ff5e5e;
+}
+
+.hero .cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: #ff5e5e;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.game-list {
+  padding: 2rem;
+  background: #fdfdfd;
+}
+
+.game-list h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.game-card {
+  background: #f9f9f9;
+  border: 2px solid #ffbaba;
+  padding: 1.5rem;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 3px 3px #ffbaba;
+}
+
+.game-card h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #ffe66d;
+  border-top: 3px solid #ff7b7b;
+}
+
+.team {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.member {
+  background: #fffaf2;
+  border: 2px solid #ffd1a9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 260px;
+  box-shadow: 3px 3px #ffd1a9;
+  text-align: center;
+}
+
+/* ========== 响应式适配：手机和平板 ========== */
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-left: 0;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .hero .cta {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .games {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-card {
+    width: 90%;
+    box-sizing: border-box;
+  }
+
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member {
+    width: 90%;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* 汉堡按钮基础样式 */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: auto;
+  color: #333;
+}
+
+/* 响应式样式 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+}
