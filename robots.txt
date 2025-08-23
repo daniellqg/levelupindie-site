@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://levelupindie.com/sitemap.xml
+Sitemap: https://www.levelupindie.com/sitemap.xml
