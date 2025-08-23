@@ -55,7 +55,7 @@ p  { margin: .5rem 0 1rem; }
 /* Header / nav — minimal like Silk */
 .site-header{
   display:flex;align-items:center;gap:1rem;
-  padding:.9rem 1.25rem;background:#040649;
+  padding:.9rem 1.25rem;background:#222834;
 }
 .brand{display:inline-flex;align-items:center;text-decoration:none}
 .logo{height:56px;max-width:100%;object-fit:contain}
