@@ -160,3 +160,21 @@ p  { margin: .5rem 0 1rem; }
 
 /* Footer */
 .site-footer{ text-align:center;padding:1.25rem;background:#ffe66d;border-top:3px solid #ff7b7b }
+
+.social-links {
+  margin-top: .5rem;
+}
+.social-links a {
+  display: inline-block;
+  margin: 0 8px;
+  color: #333;
+}
+.social-links .icon {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+  transition: fill .2s;
+}
+.social-links a:hover .icon {
+  fill: #ff5e5e; /* hover 时高亮成红色，可根据主色调改 */
+}
