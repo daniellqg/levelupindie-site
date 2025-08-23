@@ -67,7 +67,7 @@ p  { margin: .5rem 0 1rem; }
 
 .menu-toggle{
   display:none;margin-left:auto;background:none;border:none;
-  font-size:1.8rem;cursor:pointer;color:#333;
+  font-size:1.8rem;cursor:pointer;color:#d6d571;
 }
 @media (max-width:768px){
   .menu-toggle{display:block}
