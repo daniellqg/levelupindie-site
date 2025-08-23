@@ -8,14 +8,14 @@ body, h1, h2 {
 /* Header / nav — minimal like Silk */
 .site-header{
   display:flex;align-items:center;gap:1rem;
-  padding:.9rem 1.25rem;background:#060966;border-bottom:3px solid #ff7b7b;
+  padding:.9rem 1.25rem;background:#040649;
 }
 .brand{display:inline-flex;align-items:center;text-decoration:none}
 .logo{height:56px;max-width:100%;object-fit:contain}
 @media (max-width:768px){ .logo{height:48px} }
 
 .nav{list-style:none;display:flex;gap:1rem;margin:0 0 0 auto;padding:0}
-.nav a{text-decoration:none;color:#333;font-weight:700}
+.nav a{text-decoration:none;color:#e3eb0a;font-weight:700}
 .nav a[aria-current="page"]{text-decoration:underline}
 
 .menu-toggle{
