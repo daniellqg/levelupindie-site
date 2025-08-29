@@ -211,50 +211,31 @@ p  { margin: .5rem 0 1rem; }
 .member .info {
   flex: 1;                   /* 文字占满剩余空间 */
 }
-/* Team 基础样式，可加到你的全局 CSS */
-.team {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
-
-.team-grid {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  padding: 14px;
+.member {
+  position: relative;
   border: 1px solid #e7e7e7;
-  border-radius: 16px;
-  text-decoration: none;        /* 去掉链接下划线 */
+  border-radius: 12px;
+  padding: 16px;
   background: #fff;
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
 
-.team-grid:hover, .team-card:focus-visible {
+.linkedin-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #f7f7f7;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.linkedin-badge:hover,
+.linkedin-badge:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.06);
-  border-color: #d9d9d9;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
   outline: none;
-}
-
-.team-grid .avatar {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.team-grid .meta h3 {
-  margin: 0 0 4px 0;
-  font-size: 1.05rem;
-  line-height: 1.2;
-  color: #111;
-}
-
-.team-grid .meta p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #666;
 }
