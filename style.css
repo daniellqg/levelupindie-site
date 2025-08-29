@@ -257,7 +257,7 @@ p  { margin: .5rem 0 1rem; }
   padding: 16px;
   background: #fff;
   /* 关键：保证高度一致 */
-  min-height: 400px;   /* 你可以根据需要调整高度 */
+  min-height: 380px;   /* 你可以根据需要调整高度 */
   box-sizing: border-box;
 }
 
