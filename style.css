@@ -178,3 +178,17 @@ p  { margin: .5rem 0 1rem; }
 .social-links a:hover .icon {
   fill: #ff5e5e; /* hover 时高亮成红色，可根据主色调改 */
 }
+.member {
+  text-align: center;
+  padding: 1rem;
+}
+
+.member .avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;   /* 圆形头像 */
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border: 2px solid #eee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
