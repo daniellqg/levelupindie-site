@@ -239,3 +239,72 @@ p  { margin: .5rem 0 1rem; }
   box-shadow: 0 6px 18px rgba(0,0,0,.12);
   outline: none;
 }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* 每个卡片统一样式 */
+.member {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+  /* 关键：保证高度一致 */
+  min-height: 380px;   /* 你可以根据需要调整高度 */
+  box-sizing: border-box;
+}
+
+/* 头像大小保持一致 */
+.member .avatar {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+/* 文本信息块 */
+.member .info {
+  flex-grow: 1;             /* 填充剩余空间 */
+  text-align: justify;      /* 文字两端对齐 */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* 标题和段落 */
+.member .info h3 {
+  margin: 0 0 4px 0;
+}
+
+.member .info p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* LinkedIn 图标按钮 */
+.linkedin-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #f7f7f7;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.linkedin-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
