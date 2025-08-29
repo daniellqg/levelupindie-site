@@ -192,3 +192,22 @@ p  { margin: .5rem 0 1rem; }
   border: 2px solid #eee;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+.member {
+  display: flex;
+  align-items: center;       /* 垂直居中头像和文字 */
+  gap: 1rem;                 /* 头像与文字的间距 */
+  padding: 1rem;
+  text-align: left;          /* 改成左对齐 */
+}
+
+.member .avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;        /* 圆形头像 */
+  object-fit: cover;
+  flex-shrink: 0;            /* 避免头像被压缩 */
+}
+
+.member .info {
+  flex: 1;                   /* 文字占满剩余空间 */
+}
