@@ -221,7 +221,7 @@ p  { margin: .5rem 0 1rem; }
   gap: 16px;
 }
 
-.team-card {
+.team-grid {
   display: flex;
   gap: 14px;
   align-items: center;
@@ -233,27 +233,27 @@ p  { margin: .5rem 0 1rem; }
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
 
-.team-card:hover, .team-card:focus-visible {
+.team-grid:hover, .team-card:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,.06);
   border-color: #d9d9d9;
   outline: none;
 }
 
-.team-card .avatar {
+.team-grid .avatar {
   width: 64px; height: 64px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.team-card .meta h3 {
+.team-grid .meta h3 {
   margin: 0 0 4px 0;
   font-size: 1.05rem;
   line-height: 1.2;
   color: #111;
 }
 
-.team-card .meta p {
+.team-grid .meta p {
   margin: 0;
   font-size: 0.9rem;
   color: #666;
