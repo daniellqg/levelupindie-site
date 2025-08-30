@@ -67,7 +67,7 @@ p  { margin: .5rem 0 1rem; }
 
 .menu-toggle{
   display:none;margin-left:auto;background:none;border:none;
-  font-size:1.8rem;cursor:pointer;color:#d6d571;
+  font-size:1.8rem;cursor:pointer;color:#e3eb0a;
 }
 @media (max-width:768px){
   .menu-toggle{display:block}
@@ -306,10 +306,10 @@ p  { margin: .5rem 0 1rem; }
   box-shadow: 0 6px 18px rgba(0,0,0,.12);
 }
 .site-footer {
-  background: #f8f8f8;   /* 可换你喜欢的背景色 */
+  background: #222834;   /* 可换你喜欢的背景色 */
   padding: 16px;
   font-size: 14px;
-  color: #333;
+  color: #e3eb0a;
 }
 
 .site-footer .footer-content {
@@ -335,13 +335,6 @@ p  { margin: .5rem 0 1rem; }
 .site-footer .social-links a:hover .icon {
   fill: #0A66C2; /* hover LinkedIn 蓝色，Discord 可自定义 */
 }
-.site-footer {
-  background: #f8f8f8;   /* 可以改成你喜欢的背景色 */
-  padding: 16px;
-  font-size: 14px;
-  color: #333;
-}
-
 .site-footer .footer-content {
   display: flex;
   justify-content: space-between; /* 大屏时左右分布 */
