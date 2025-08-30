@@ -158,9 +158,6 @@ p  { margin: .5rem 0 1rem; }
 .member h3{margin:0 0 .35rem;font-size:1.1rem}
 .member p{margin:.25rem 0;color:#555}
 
-/* Footer */
-.site-footer{ text-align:center;padding:1.25rem;background:#ffe66d;border-top:3px solid #ff7b7b }
-
 .social-links {
   margin-top: .5rem;
 }
