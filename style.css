@@ -97,6 +97,25 @@ h1, h2, .brand, .nav a, .cta {
   text-decoration: none;
   font-weight: 700;
 }
+/* 按钮分组 */
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;      /* 小屏自动换行 */
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+/* 次级按钮样式 */
+.cta.secondary {
+  background: #222834;
+  color: #e3eb0a;
+  border: 2px solid #e3eb0a;
+}
+.cta.secondary:hover,
+.cta.secondary:focus-visible {
+  background: #e3eb0a;
+  color: #222834;
+}
 
 /* =========================
    Generic Sections
