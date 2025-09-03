@@ -1,97 +1,4 @@
-/* 基础：盒模型与默认间距 */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: #fffef9;
-  overflow-x: hidden;
-}
-
-/* 仅在标题/按钮用像素风，避免整站难读 */
-h1, h2, .brand, .nav a, .cta {
-  font-family: 'Press Start 2P', system-ui, sans-serif;
-  letter-spacing: 0.5px;   /* 像素体稍微拉一点字距更易读 */
-}
-
-/* 主要容器宽度（桌面不至于太宽，移动端满宽） */
-.container, .gallery, .hero {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-/* 卡片展示两列（小屏 1 列） */
-.gallery {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 720px) {
-  .gallery { grid-template-columns: 1fr 1fr; }
-}
-
-/* 统一封面比例，避免撑破布局 */
-.tile .img-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-  background: #f4f4f4;
-}
-.tile .img-wrap img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-
-/* 一些常见元素的默认样式，可按需保留 */
-img { max-width: 100%; height: auto; display: block; }
-h1 { font-size: 2.2rem; margin: 1rem 0 .5rem; color: #ff5e5e; }
-h2 { font-size: 1.25rem; margin: 1.5rem 0 .75rem; }
-p  { margin: .5rem 0 1rem; }
-
-/* Header / nav — minimal like Silk */
-.site-header{
-  display:flex;align-items:center;gap:1rem;
-  padding:.9rem 1.25rem;background:#222834;
-}
-.brand{display:inline-flex;align-items:center;text-decoration:none}
-.logo{height:56px;max-width:100%;object-fit:contain}
-@media (max-width:768px){ .logo{height:48px} }
-
-.nav{list-style:none;display:flex;gap:1rem;margin:0 0 0 auto;padding:0}
-.nav a{text-decoration:none;color:#e3eb0a;font-weight:700}
-.nav a[aria-current="page"]{text-decoration:underline}
-
-.menu-toggle{
-  display:none;margin-left:auto;background:none;border:none;
-  font-size:1.8rem;cursor:pointer;color:#e3eb0a;
-}
-@media (max-width:768px){
-  .menu-toggle{display:block}
-  .nav{display:none;flex-direction:column;width:100%;margin:0}
-  .nav.show{display:flex}
-}
-
-/* Hero */
-.hero{
-  text-align:left;max-width:980px;margin:0 auto;padding:3.2rem 1rem 2rem;background:#ffecd1;
-}
-.hero h1{margin:0 0 .4rem;font-size:2.4rem;color:#ff5e5e}
-.hero p{margin:0 0 1rem;font-size:1.1rem}
-.cta{
-  display:inline-block;padding:.7rem 1.2rem;border-radius:10px;
-  background:#ff5e5e;color:#fff;text-decoration:none;font-weight:700;
-}
-
-/* Section container */
-.container{max-width:860px;margin:0 auto;padding:2rem 1rem 4rem;line-height:1.75}
-.section-title{max-width:980px;margin:0 auto 1rem;padding:0 1rem;font-size:1.6rem;font-weight:800}
-
-/* Gallery tiles — big, clean cards like the reference */
-/* 容器与标题（左对齐、窄栏） */
+/* === GALLERY (Our Games / Partnered Games 共用) === */
 .gallery {
   max-width: 980px;
   margin: 0 auto;
@@ -103,7 +10,9 @@ p  { margin: .5rem 0 1rem; }
 @media (min-width: 720px){
   .gallery { grid-template-columns: 1fr 1fr; }
 }
-.section-title {
+
+/* 放在 .gallery 里的 h2 会占满整行，和两列卡片对齐 */
+.gallery > h2 {
   grid-column: 1 / -1;
   font-size: 1.6rem;
   font-weight: 800;
@@ -111,7 +20,7 @@ p  { margin: .5rem 0 1rem; }
   text-align: left;
 }
 
-/* 大图卡片（整卡可点、轻交互） */
+/* 统一卡片 */
 .tile {
   display: block;
   text-decoration: none;
@@ -128,248 +37,129 @@ p  { margin: .5rem 0 1rem; }
   border-color: #ddd;
 }
 
-/* 统一比例封面：16:9，超出裁切以保证整齐 */
+/* 封面比例统一 16:9 */
 .tile .img-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9;     /* 若需兼容更旧浏览器，可用 padding-top 技法 */
+  aspect-ratio: 16/9;
   overflow: hidden;
   background: #f4f4f4;
 }
 .tile .img-wrap img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover;       /* 保持铺满且裁切 */
+  object-fit: cover;
   display: block;
 }
 
-/* 标题与副文案 */
+/* 标题 + 副文案 */
 .tile-caption {
   padding: .85rem 1rem 1.1rem;
   display: grid; gap: .25rem;
 }
 .tile-caption strong { font-size: 1.06rem; }
 .tile-caption span { font-size: .95rem; color: #555; line-height: 1.45; }
-
-/* Team */
-.team-grid{display:grid;gap:1rem;grid-template-columns:1fr}
-@media (min-width:720px){ .team-grid{grid-template-columns:1fr 1fr} }
-.member{border:1px solid #e9e9e9;border-radius:10px;padding:1rem 1.1rem;background:#fff}
-.member h3{margin:0 0 .35rem;font-size:1.1rem}
-.member p{margin:.25rem 0;color:#555}
-
-.social-links {
-  margin-top: .5rem;
-}
-.social-links a {
-  display: inline-block;
-  margin: 0 8px;
-  color: #333;
-}
-.social-links .icon {
-  width: 24px;
-  height: 24px;
-  fill: #333;
-  transition: fill .2s;
-}
-.social-links a:hover .icon {
-  fill: #ff5e5e; /* hover 时高亮成红色，可根据主色调改 */
-}
-.member {
-  text-align: center;
-  padding: 1rem;
-}
-
-.member .avatar {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;   /* 圆形头像 */
-  object-fit: cover;
-  margin-bottom: 0.5rem;
-  border: 2px solid #eee;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-.member {
-  display: flex;
-  align-items: center;       /* 垂直居中头像和文字 */
-  gap: 1rem;                 /* 头像与文字的间距 */
-  padding: 1rem;
-  text-align: left;          /* 改成左对齐 */
-}
-
-.member .avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;        /* 圆形头像 */
-  object-fit: cover;
-  flex-shrink: 0;            /* 避免头像被压缩 */
-}
-
-.member .info {
-  flex: 1;                   /* 文字占满剩余空间 */
-}
-.member {
-  position: relative;
-  border: 1px solid #e7e7e7;
-  border-radius: 12px;
-  padding: 16px;
-  background: #fff;
-}
-
-.linkedin-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  border-radius: 8px;
-  background: #f7f7f7;
-  text-decoration: none;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.linkedin-badge:hover,
-.linkedin-badge:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,.12);
-  outline: none;
-}
+/* === TEAM (最终版) === */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
-/* 每个卡片统一样式 */
 .member {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: column;  /* 头像在上，文字在下 */
   align-items: flex-start;
   border: 1px solid #e7e7e7;
   border-radius: 12px;
   padding: 16px;
   background: #fff;
-  /* 关键：保证高度一致 */
-  min-height: 380px;   /* 你可以根据需要调整高度 */
+  min-height: 380px;       /* 等高关键数值，可按需微调 */
   box-sizing: border-box;
 }
 
-/* 头像大小保持一致 */
 .member .avatar {
   width: 96px;
   height: 96px;
-  object-fit: cover;
   border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 12px;
+  flex-shrink: 0;
 }
 
-/* 文本信息块 */
 .member .info {
-  flex-grow: 1;             /* 填充剩余空间 */
-  text-align: justify;      /* 文字两端对齐 */
+  flex: 1;                 /* 占满剩余空间，撑起等高 */
   display: flex;
   flex-direction: column;
   gap: 6px;
+  text-align: justify;     /* 两端对齐简介文本 */
 }
 
-/* 标题和段落 */
 .member .info h3 {
   margin: 0 0 4px 0;
+  font-size: 1.1rem;
 }
-
 .member .info p {
   margin: 0;
   line-height: 1.5;
 }
 
-/* LinkedIn 图标按钮 */
+/* 右上角 LinkedIn 按钮（hover 可出现阴影） */
 .linkedin-badge {
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
   border-radius: 8px;
   background: #f7f7f7;
   text-decoration: none;
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
-
-.linkedin-badge:hover {
+.linkedin-badge:hover,
+.linkedin-badge:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  outline: none;
 }
+/* === FOOTER (最终版，含移动端) === */
 .site-footer {
-  background: #222834;   /* 可换你喜欢的背景色 */
+  background: #222834;
   padding: 16px;
   font-size: 14px;
   color: #e3eb0a;
 }
-
 .site-footer .footer-content {
   display: flex;
-  justify-content: space-between; /* 左右分布 */
-  align-items: center;            /* 垂直居中 */
+  justify-content: space-between;  /* 大屏左右分布 */
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .site-footer .social-links a {
   margin-left: 12px;
   display: inline-flex;
 }
-
 .site-footer .icon {
   width: 20px;
   height: 20px;
   fill: currentColor;
   transition: fill 0.2s ease;
 }
-
 .site-footer .social-links a:hover .icon {
-  fill: #0A66C2; /* hover LinkedIn 蓝色，Discord 可自定义 */
+  fill: #0A66C2; /* hover 高亮 */
 }
-.site-footer .footer-content {
-  display: flex;
-  justify-content: space-between; /* 大屏时左右分布 */
-  align-items: center;            /* 垂直居中 */
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.site-footer .social-links a {
-  margin-left: 12px;
-  display: inline-flex;
-}
-
-.site-footer .icon {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-  transition: fill 0.2s ease;
-}
-
-.site-footer .social-links a:hover .icon {
-  fill: #0A66C2; /* hover LinkedIn 蓝色，Discord 可自定义 */
-}
-
-/* 📱 手机端自适应：小屏时上下堆叠居中 */
+/* 手机端：上下堆叠居中 */
 @media (max-width: 600px) {
   .site-footer .footer-content {
-    flex-direction: column; /* 改成竖直排列 */
+    flex-direction: column;
     justify-content: center;
     text-align: center;
-    gap: 10px; /* 元素间隔 */
+    gap: 10px;
   }
-
   .site-footer .social-links a {
     margin-left: 8px;
-    margin-right: 8px; /* 居中时左右间距一致 */
+    margin-right: 8px;
   }
 }
