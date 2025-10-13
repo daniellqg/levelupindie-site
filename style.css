@@ -200,8 +200,8 @@ h1, h2, .brand, .nav a, .cta {
   padding: .85rem 1rem 1.1rem;
   display: grid; gap: .25rem;
 }
-.tile-caption strong { font-size: 1.06rem; }
-.tile-caption span   { font-size: .95rem; color: #555; line-height: 1.45; }
+.tile-caption strong { font-size: 1rem; }
+.tile-caption span   { font-size: .92rem; color: #555; line-height: 1.45; }
 
 /* =========================
    Team
@@ -350,43 +350,54 @@ body { overflow-x: hidden; }
 /* 图片/卡片绝不超过容器 */
 img, .tile, .member, .hero, .gallery { max-width: 100%; }
 
-/* Desktop layout: make cards smaller and add a third column */
+/* === Desktop layout (final clean merge): smaller images, balanced text ratio === */
 @media (min-width: 1024px) {
+  /* 三列居中，容器略窄，避免撑满屏 */
   .gallery {
     grid-template-columns: repeat(3, 1fr);
-    max-width: 1100px;           /* a bit narrower than full width */
-    gap: 1.25rem;
-  }
-  /* Optional: keep each card from becoming too wide on very large screens */
-  .tile { max-width: 360px; }
-  .gallery { justify-content: center; }
-}
-/* === Desktop refinements: smaller images, tighter cards, 3 columns === */
-@media (min-width: 1024px) {
-  /* 3 columns and narrower overall width */
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1100px;
+    max-width: 1040px;      /* 比 1100px 再窄一点，整体更紧凑 */
     gap: 16px;
-    justify-content: center; /* center the grid when not full */
+    justify-content: center;
+    padding: 2rem 1rem 4rem;
   }
 
-  /* Keep each card from getting too wide and unify caption alignment */
+  /* 卡片限制宽度并居中，避免在超宽屏过大 */
   .tile {
-    max-width: 340px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* Make the visual footprint of images smaller on desktop */
-  .tile .img-wrap {
-    aspect-ratio: auto;   /* override 16/9 */
-    height: 160px;        /* fixed, shorter banner-style image */
-  }
-}
-
-/* Slightly reduce image height on medium screens too (tablets/laptops) */
-@media (min-width: 820px) and (max-width: 1023.98px) {
+  /* 图片改为固定较小高度，文字占比更合理 */
   .tile .img-wrap {
     aspect-ratio: auto;
-    height: 190px;
+    height: 140px;
   }
+}
+
+/* 中等屏（820–1023px）：也收敛一下图片高度 */
+@media (min-width: 820px) and (max-width: 1023.98px) {
+  .gallery {
+    max-width: 980px;
+    gap: 16px;
+  }
+  .tile {
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tile .img-wrap {
+    aspect-ratio: auto;
+    height: 170px;
+  }
+}
+
+/* 超大屏（≥1440px）：四列但仍保持小卡片感 */
+@media (min-width: 1440px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1300px;
+  }
+  .tile { max-width: 300px; }
+  .tile .img-wrap { height: 140px; }
 }
