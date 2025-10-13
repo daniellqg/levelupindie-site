@@ -361,3 +361,32 @@ img, .tile, .member, .hero, .gallery { max-width: 100%; }
   .tile { max-width: 360px; }
   .gallery { justify-content: center; }
 }
+/* === Desktop refinements: smaller images, tighter cards, 3 columns === */
+@media (min-width: 1024px) {
+  /* 3 columns and narrower overall width */
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    gap: 16px;
+    justify-content: center; /* center the grid when not full */
+  }
+
+  /* Keep each card from getting too wide and unify caption alignment */
+  .tile {
+    max-width: 340px;
+  }
+
+  /* Make the visual footprint of images smaller on desktop */
+  .tile .img-wrap {
+    aspect-ratio: auto;   /* override 16/9 */
+    height: 160px;        /* fixed, shorter banner-style image */
+  }
+}
+
+/* Slightly reduce image height on medium screens too (tablets/laptops) */
+@media (min-width: 820px) and (max-width: 1023.98px) {
+  .tile .img-wrap {
+    aspect-ratio: auto;
+    height: 190px;
+  }
+}
