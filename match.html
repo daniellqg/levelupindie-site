@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Content Creator × Game Developer Matching | Levelup Games</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="container">
+    <a href="index.html">
+      <img src="logo.png" alt="Levelup Games" style="height: 40px;" />
+    </a>
+  </header>
+
+  <!-- Main -->
+  <main class="container" style="margin-top: 80px;">
+
+    <h1>Connecting Games with the Right Content Creators</h1>
+
+    <p style="max-width: 720px;">
+      We help game developers find content creators who genuinely and algorithmically
+      fit their games — not mass key distribution, but real collaboration and
+      community-driven exposure.
+    </p>
+
+    <!-- Entry Buttons -->
+    <div style="margin: 40px 0; display: flex; gap: 20px; flex-wrap: wrap;">
+      <button class="button" onclick="showDeveloperForm()">
+        🎮 I’m a Game Developer
+      </button>
+
+      <button class="button secondary" onclick="showCreatorForm()">
+        🎥 I’m a Content Creator
+      </button>
+    </div>
+
+    <!-- Embedded Forms -->
+    <div style="margin-top: 60px;">
+
+      <!-- Developer Form -->
+      <div id="developerForm" style="display: none; margin-top: 40px;">
+        <iframe
+          data-tally-src="https://tally.so/embed/2EBgGj?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="1800"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Submit Your Game for Content Creator Matching">
+        </iframe>
+      </div>
+
+      <!-- Creator Form -->
+      <div id="creatorForm" style="display: none; margin-top: 40px;">
+        <iframe
+          data-tally-src="https://tally.so/embed/aQeLp9?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="2000"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="创作者申请表｜发现真正适合你的独立游戏">
+        </iframe>
+      </div>
+
+    </div>
+
+    <!-- Value Props -->
+    <section style="margin-top: 80px;">
+      <h2>For Game Developers</h2>
+      <ul>
+        <li>Community-driven creator support</li>
+        <li>High-quality content and organic exposure</li>
+        <li>Algorithmically assisted matching, not mass outreach</li>
+      </ul>
+    </section>
+
+    <section style="margin-top: 60px;">
+      <h2>For Content Creators</h2>
+      <ul>
+        <li>Discover games that truly fit your audience and style</li>
+        <li>Direct access to indie developers</li>
+        <li>Creative insights and positioning support</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="container" style="margin-top: 120px;">
+    <p style="font-size: 14px; opacity: 0.6;">
+      © Levelup Games — Content Creator × Developer Matching (Beta)
+    </p>
+  </footer>
+
+  <!-- Page Logic -->
+  <script>
+    function showDeveloperForm() {
+      document.getElementById("developerForm").style.display = "block";
+      document.getElementById("creatorForm").style.display = "none";
+      scrollToForms();
+    }
+
+    function showCreatorForm() {
+      document.getElementById("creatorForm").style.display = "block";
+      document.getElementById("developerForm").style.display = "none";
+      scrollToForms();
+    }
+
+    function scrollToForms() {
+      setTimeout(function () {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth"
+        });
+      }, 300);
+    }
+  </script>
+
+  <!-- Tally Embed Script (only once) -->
+  <script>
+    var d = document,
+        w = "https://tally.so/widgets/embed.js",
+        v = function () {
+          if (typeof Tally !== "undefined") {
+            Tally.loadEmbeds();
+          } else {
+            d.querySelectorAll("iframe[data-tally-src]:not([src])")
+              .forEach(function (e) {
+                e.src = e.dataset.tallySrc;
+              });
+          }
+        };
+
+    if (typeof Tally !== "undefined") {
+      v();
+    } else if (d.querySelector('script[src="' + w + '"]') === null) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
+  </script>
+
+</body>
+</html>
