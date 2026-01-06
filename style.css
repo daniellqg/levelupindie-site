@@ -401,3 +401,19 @@ img, .tile, .member, .hero, .gallery { max-width: 100%; }
   .tile { max-width: 300px; }
   .tile .img-wrap { height: 140px; }
 }
+/* Language Switch */
+.lang-switch {
+  font-size: 14px;
+  text-decoration: none;
+  color: #666;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.lang-switch:hover {
+  color: #000;
+  border-color: #ddd;
+  background: #f7f7f7;
+}
