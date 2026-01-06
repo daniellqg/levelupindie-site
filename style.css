@@ -304,6 +304,19 @@ h1, h2, .brand, .nav a, .cta {
     margin: 0 8px;
   }
 }
+/* Legal links in footer */
+.site-footer a {
+  color: #e3eb0a;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
 
 /* =========================
    Optional Utilities
